@@ -1,16 +1,59 @@
 import React from 'react';
-import { StyleSheet, Text, View ,ActivityIndicator,FlatList,TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View ,ActivityIndicator,FlatList,TouchableOpacity,Button,ScrollView} from 'react-native';
 import oauthSignature from 'oauth-signature';
 
 export default class Home extends React.Component {
     state = {
         isLoading:false,
         dataSource:[],
+        currentDataSource:[],
+        level:0,
+    }
+
+    showSubMenu = (id)=>{
+        let selectedChildren = [];
+        const children = this.state.currentDataSource[this.state.level].map((item,index)=>{
+            if(item.id === id)
+                selectedChildren = item.children_data;
+        });
+        this.setState({
+            ...this.state,
+            currentDataSource:[...this.state.currentDataSource,selectedChildren],
+            level:(this.state.level+1),
+        });
+        //console.log(this.state.level);
+        //console.log(selectedChildren);
+        //console.log(this.state.currentDataSource);
+    };
+
+    showProducts = (id)=>{
+        alert("show products in Category ID =  " + id);
+    };
+    backLevel = ()=>{
+        const level = this.state.level;
+        let d = [];
+        for(let i=0;i<this.state.currentDataSource.length;i++){
+            if(i<level){
+                d = [...d,this.state.currentDataSource[i]];
+            }
+        }
+
+        this.setState({
+            ...this.state,
+            currentDataSource:d,
+            level:(level-1)
+        },()=>{
+            //console.log(this.state.currentDataSource);
+            //console.log(this.state.level);
+        });
+
     }
     componentDidMount(){
         this.setState({
             isLoading:true,
-            dataSource:[]
+            dataSource:[],
+            currentDataSource:[],
+            level:0,
         });
         let date = Math.floor(Date.now() / 1000);//new Date();152020405886
         let nonce = this.randomString(6);
@@ -45,9 +88,11 @@ export default class Home extends React.Component {
 
                 this.setState({
                     isLoading: false,
-                    dataSource: responseJson,
+                    dataSource: responseJson.children_data,
+                    currentDataSource:[responseJson.children_data],
+                    level:0,
                 }, function(){
-                    console.log(responseJson);
+                    //console.log(responseJson);
                 });
 
             })
@@ -69,15 +114,19 @@ export default class Home extends React.Component {
     _keyExtractor = (item, index) => item.id;
     _renderItem = ({item}) => {
         if(item.is_active) {
-            if(item.children_data){
-                return (<TouchableOpacity style={styles.item} id={item.id}>
-                    <Text style={styles.itemText}>{item.name}->>></Text>
-                </TouchableOpacity>);
+            if(item.children_data.length){
+                return (
+                    <View style={styles.item}>
+                        <TouchableOpacity onPress={()=>this.showSubMenu(item.id)}><Text>+</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>this.showProducts(item.id)}><Text>{item.name}</Text></TouchableOpacity>
+                    </View>
+                );
             }else{
-                return (<TouchableOpacity style={styles.item} id={item.id}>
+                return (<TouchableOpacity onPress={()=>this.showProducts(item.id)} style={styles.item} id={item.id}>
                     <Text style={styles.itemText}>{item.name}</Text>
                 </TouchableOpacity>);
             }
+
 
         }
     }
@@ -85,16 +134,22 @@ export default class Home extends React.Component {
     render() {
         let jsx = '';
         if(this.state.isLoading){
-            jsx = <View style={styles.container}><Text >Loading Content</Text><ActivityIndicator size="large" color="#0000ff" /></View>;
+            jsx = <View style={styles.container}><Text>Loading Content</Text><ActivityIndicator size="large" color="#0000ff" /></View>;
         }
         else{
+            const backButton =
+                (
+                    <View style={{position: 'absolute', left: 0, right: 0, bottom: 0}}>
+                        <Button onPress={this.backLevel} title="Back"/>
+                    </View>
+                );
             //jsx = <View><Text>Data Loadded</Text></View>
-            jsx = <View><FlatList
-                data={this.state.dataSource.children_data}
+            jsx = <View style={styles.mainView}><FlatList style={{marginBottom:50}}
+                data={this.state.currentDataSource[this.state.level]}
                 extraData={this.state}
                 keyExtractor={this._keyExtractor}
                 renderItem={this._renderItem}
-                /></View>
+            />{backButton}</View>
         }
         return (
             <View style={styles.mainView}>{jsx}</View>
@@ -116,7 +171,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 30,
+        padding: 10,
         margin: 2,
         borderColor: '#2a4944',
         borderWidth: 1,
@@ -124,5 +179,6 @@ const styles = StyleSheet.create({
     },
     itemText:{
         textAlign:'right',
+        width:"100%",
     }
 });

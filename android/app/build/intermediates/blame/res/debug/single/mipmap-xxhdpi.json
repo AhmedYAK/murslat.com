@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/apple/Documents/React-NativeProjects/murslat.com/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/Users/apple/Documents/React-NativeProjects/murslat.com/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/apple/Documents/React-NativeProjects/Magento-Murslat-App/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
         "source": "/Users/apple/Documents/React-NativeProjects/Magento-Murslat-App/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     }
