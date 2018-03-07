@@ -4,6 +4,9 @@ import Categories from './src/screens/Tabs/Categories';
 import Search from './src/screens/Tabs/Search';
 import Cart from './src/screens/Tabs/Cart';
 import WishList from './src/screens/Tabs/WishList';
+import ProductsList from './src/screens/Products/ProductsList'
+import ProductDetails from './src/screens/Products/ProductDetails';
+import ProductsSearch from './src/screens/Products/ProductsSearch';
 
 //import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -17,6 +20,9 @@ Navigation.registerComponent("CategoriesScreen",()=>Categories);
 Navigation.registerComponent("SearchScreen",()=>Search);
 Navigation.registerComponent("CartScreen",()=>Cart);
 Navigation.registerComponent("WishListScreen",()=>WishList);
+Navigation.registerComponent("ProductsListScreen",()=>ProductsList);
+Navigation.registerComponent("ProductDetailsScreen",()=>ProductDetails);
+Navigation.registerComponent("ProductsSearch",()=>ProductsSearch);
 /** Start Tab Naviagation **/
 Navigation.startTabBasedApp({
     tabs:[

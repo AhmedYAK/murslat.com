@@ -1,18 +1,10 @@
 [
     {
-        "merged": "/Users/apple/Documents/React-NativeProjects/Magento-Murslat-App/android/app/build/intermediates/res/merged/debug/menu/stub.xml",
-        "source": "/Users/apple/Documents/React-NativeProjects/Magento-Murslat-App/android/app/build/intermediates/exploded-aar/MagentoMurslatApp/react-native-navigation/unspecified/res/menu/stub.xml"
-    },
-    {
         "merged": "/Users/apple/Documents/React-NativeProjects/murslat.com/android/app/build/intermediates/res/merged/debug/menu/search_item.xml",
         "source": "/Users/apple/Documents/React-NativeProjects/murslat.com/android/app/build/intermediates/exploded-aar/MagentoMurslatApp/react-native-navigation/unspecified/res/menu/search_item.xml"
     },
     {
         "merged": "/Users/apple/Documents/React-NativeProjects/murslat.com/android/app/build/intermediates/res/merged/debug/menu/stub.xml",
         "source": "/Users/apple/Documents/React-NativeProjects/murslat.com/android/app/build/intermediates/exploded-aar/MagentoMurslatApp/react-native-navigation/unspecified/res/menu/stub.xml"
-    },
-    {
-        "merged": "/Users/apple/Documents/React-NativeProjects/Magento-Murslat-App/android/app/build/intermediates/res/merged/debug/menu/search_item.xml",
-        "source": "/Users/apple/Documents/React-NativeProjects/Magento-Murslat-App/android/app/build/intermediates/exploded-aar/MagentoMurslatApp/react-native-navigation/unspecified/res/menu/search_item.xml"
     }
 ]

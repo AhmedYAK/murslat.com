@@ -26,8 +26,32 @@ export default class Home extends React.Component {
         //console.log(this.state.currentDataSource);
     };
 
-    showProducts = (id)=>{
-        alert("show products in Category ID =  " + id);
+    showProducts = (id,categoryTitle)=>{
+        //alert("show products in Category ID =  " + id);
+        //console.log(this.props);
+        this.props.navigator.push({
+            screen: 'ProductsListScreen', // unique ID registered with Navigation.registerScreen
+            title: categoryTitle, // navigation bar title of the pushed screen (optional)
+            subtitle: undefined, // navigation bar subtitle of the pushed screen (optional)
+            //titleImage: require('../../img/my_image.png'), // iOS only. navigation bar title image instead of the title text of the pushed screen (optional)
+            passProps: {categoryID:id,categoryTitle:categoryTitle}, // Object that will be passed as props to the pushed screen (optional)
+            animated: true, // does the push have transition animation or does it happen immediately (optional)
+            animationType: 'slide-horizontal', // 'fade' (for both) / 'slide-horizontal' (for android) does the push have different transition animation (optional)
+            backButtonTitle: undefined, // override the back button title (optional)
+            backButtonHidden: false, // hide the back button altogether (optional)
+            navigatorStyle: {}, // override the navigator style for the pushed screen (optional)
+            navigatorButtons: {}, // override the nav buttons for the pushed screen (optional)
+            // enable peek and pop - commited screen will have `isPreview` prop set as true.
+            previewView: undefined, // react ref or node id (optional)
+            previewHeight: undefined, // set preview height, defaults to full height (optional)
+            previewCommit: true, // commit to push preview controller to the navigation stack (optional)
+            previewActions: [{ // action presses can be detected with the `PreviewActionPress` event on the commited screen.
+                id: '', // action id (required)
+                title: '', // action title (required)
+                style: undefined, // 'selected' or 'destructive' (optional)
+                actions: [], // list of sub-actions
+            }],
+        });
     };
     backLevel = ()=>{
         const level = this.state.level;
@@ -48,6 +72,7 @@ export default class Home extends React.Component {
         });
 
     }
+
     componentDidMount(){
         this.setState({
             isLoading:true,
@@ -83,22 +108,22 @@ export default class Home extends React.Component {
                 'Authorization': 'OAuth oauth_consumer_key="jkvkjy2lmjcb9c8gju0neywg975txqqr",oauth_token="cle74p2dyr2tyxo4thrfd5mrafa1htgr",oauth_signature_method="HMAC-SHA1",oauth_timestamp="'+date+'",' + 'oauth_nonce="'+nonce+'",oauth_version="1.0",oauth_signature="'+encodedSignature+'"',
             }
         })
-            .then((response) => response.json())
-            .then((responseJson) => {
+        .then((response) => response.json())
+        .then((responseJson) => {
 
-                this.setState({
-                    isLoading: false,
-                    dataSource: responseJson.children_data,
-                    currentDataSource:[responseJson.children_data],
-                    level:0,
-                }, function(){
-                    //console.log(responseJson);
-                });
-
-            })
-            .catch((error) =>{
-                console.error(error);
+            this.setState({
+                isLoading: false,
+                dataSource: responseJson.children_data,
+                currentDataSource:[responseJson.children_data],
+                level:0,
+            }, function(){
+                //console.log(responseJson);
             });
+
+        })
+        .catch((error) =>{
+            console.error(error);
+        });
 
     }
 
@@ -118,7 +143,7 @@ export default class Home extends React.Component {
                 return (
                     <View style={styles.item}>
                         <TouchableOpacity onPress={()=>this.showSubMenu(item.id)}><Text>+</Text></TouchableOpacity>
-                        <TouchableOpacity onPress={()=>this.showProducts(item.id)}><Text>{item.name}</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>this.showProducts(item.id,item.name)}><Text>{item.name}</Text></TouchableOpacity>
                     </View>
                 );
             }else{
