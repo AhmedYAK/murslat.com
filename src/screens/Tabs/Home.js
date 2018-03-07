@@ -187,9 +187,10 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#000',
         alignItems: 'center',
         justifyContent: 'center',
+        
     },
     mainView:{
         flex: 1,
@@ -200,9 +201,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         margin: 2,
-        borderColor: '#2a4944',
-        borderWidth: 1,
-        backgroundColor: '#d2f7f1',
+
+        backgroundColor: '#90AFC5',
     },
     itemText:{
         textAlign:'right',

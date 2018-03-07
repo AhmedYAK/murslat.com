@@ -2937,9 +2937,9 @@ react-devtools-core@3.0.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-native-navigation@^1.1.393:
-  version "1.1.393"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.393.tgz#f7a4bed78190f7caf0c2dad3c7f28201661fe9da"
+react-native-navigation@^1.1.398:
+  version "1.1.399"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.399.tgz#6897a9f739bce345c761b10dfc76acd4b3ead221"
   dependencies:
     lodash "4.x.x"
 

@@ -108,12 +108,12 @@ export default class Search extends React.Component {
                     style={styles.searchTextInput}
                     onChangeText={(text) => this.textInputChange(text)}
                     value={this.state.searchText}
-                    placeholder="Search Products"
+                    placeholder="البحث"
                 />
                 <Button
                     style={styles.searchButton}
                     onPress={this.buttonPress}
-                    title="search"
+                    title="بحث"
                     accessibilityLabel="Learn more about this purple button"
                 />
             </View>
@@ -155,6 +155,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop:10,
     },
     searchView:{
       flexDirection:'row',
@@ -162,19 +163,21 @@ const styles = StyleSheet.create({
       marginTop:10,
     },
     searchTextInput:{
-        width:'80%',
-        height:30,
-        borderWidth:2,
+        width:'70%',
+        height:35,
+        borderWidth:1,
         borderColor:'#ccc',
-        textAlign:'center'
+        textAlign:'center',
+        marginTop:10,
     },
     searchButton:{
-        width:'20%',
-        height:30,
+        width:'30%',
+        height:20,
         backgroundColor:'#2c345e',
         borderWidth:2,
         borderColor:'#ccc',
         textAlign:'center',
+        justifyContent:'center',
     },
     item: {
         flexDirection: 'row',

@@ -28,20 +28,20 @@ Navigation.startTabBasedApp({
     tabs:[
         {
             screen:"HomeScreen",
-            label: "Home",
-            title: "Home",
-            icon: require('./src/assets/rsz_search-icon-hi-2.png'),
+            label: "الرئيسية",
+            title: "الرئيسية",
+            icon: require('./src/assets/home_outline_small.png'),
             navigatorButtons:{ // nav bar buttons
                 leftButtons:[
                     {
-                        icon:require('./src/assets/rsz_search-icon-hi-2.png'),
+                        icon:require('./src/assets/home_outline_small.png'),
                         title:"Menu",
                         id:"sideDrawerToggle",
                     },
                 ],
                 rightButtons:[
                     {
-                        icon:require('./src/assets/rsz_search-icon-hi-2.png'),
+                        icon:require('./src/assets/home_outline_small.png'),
                         title:"Menu",
                     },
                 ]
@@ -49,9 +49,9 @@ Navigation.startTabBasedApp({
         },
         {
             screen:"CategoriesScreen",
-            label: "Categories",
-            title: "Categories",
-            icon: require('./src/assets/rsz_search-icon-hi-2.png'),
+            label: "التصنيفات",
+            title: "التصنيفات",
+            icon: require('./src/assets/categories_small.png'),
             navigatorButtons:{ // nav bar buttons
                 leftButtons:[
                     {
@@ -64,8 +64,8 @@ Navigation.startTabBasedApp({
         },
         {
             screen:"SearchScreen",
-            label: "Search",
-            title: "Search",
+            label: "البحث",
+            title: "البحث",
             icon: require('./src/assets/rsz_search-icon-hi-2.png'),
             navigatorButtons:{ // nav bar buttons
                 leftButtons:[
@@ -79,9 +79,9 @@ Navigation.startTabBasedApp({
         },
         {
             screen:"CartScreen",
-            label: "Cart",
-            title: "Cart",
-            icon: require('./src/assets/rsz_search-icon-hi-2.png'),
+            label: "سلة التسوق",
+            title: "سلة التسوق",
+            icon: require('./src/assets/cart_blue_small.png'),
             navigatorButtons:{ // nav bar buttons
                 leftButtons:[
                     {
@@ -96,7 +96,7 @@ Navigation.startTabBasedApp({
             screen:"WishListScreen",
             label: "WishList",
             title: "WishList",
-            icon: require('./src/assets/rsz_search-icon-hi-2.png'),
+            icon: require('./src/assets/whishlist_small.png'),
             navigatorButtons:{ // nav bar buttons
                 leftButtons:[
                     {
@@ -126,14 +126,14 @@ Navigation.startTabBasedApp({
         },
     },
     appStyle:{ ////android
-        navigationBarColor: '#000000', // change the background color of the bottom native navigation bar.
+        navigationBarColor: '#fff', // change the background color of the bottom native navigation bar.
         navBarTitleTextCentered: true, // default: false. centers the title.
         navBarSubTitleTextCentered: true, // (Android - default: false, iOS - default: depending on navBarTitleTextCentered). centers the subTitle.
         //navBarButtonFontFamily: 'sans-serif-thin', // Change the font family of textual buttons
         statusBarColor: '#000000', // change the color of the status bar.
         drawUnderStatusBar: false, // default: false, will draw the screen underneath the statusbar. Useful togheter with statusBarColor: transparent
         //collapsingToolBarImage: "http://lorempixel.com/400/200/", // Collapsing Toolbar image.
-        collapsingToolBarImage: require('./src/assets/rsz_search-icon-hi-2.png'), // Collapsing Toolbar image. Either use a url or require a local image.
+        collapsingToolBarImage: require('./src/assets/categories_small.png'), // Collapsing Toolbar image. Either use a url or require a local image.
         collapsingToolBarCollapsedColor: '#0f2362', // Collapsing Toolbar scrim color.
         navBarTextFontBold: false, // Optional. Set the title to bold.
         navBarHeight: 70, // Optional, set the navBar height in pixels.

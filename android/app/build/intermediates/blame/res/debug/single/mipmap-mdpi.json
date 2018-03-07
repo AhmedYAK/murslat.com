@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/Users/apple/Documents/React-NativeProjects/murslat.com/android/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
-        "source": "/Users/apple/Documents/React-NativeProjects/murslat.com/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\apple\\Documents\\React-NativeProjects\\murslat.com\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\Users\\apple\\Documents\\React-NativeProjects\\murslat.com\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\proj\\demo\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\proj\\demo\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }
 ]

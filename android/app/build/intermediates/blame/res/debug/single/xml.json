@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/Users/apple/Documents/React-NativeProjects/murslat.com/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
-        "source": "/Users/apple/Documents/React-NativeProjects/murslat.com/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/res/xml/preferences.xml"
+        "merged": "C:\\Users\\apple\\Documents\\React-NativeProjects\\murslat.com\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "C:\\Users\\apple\\Documents\\React-NativeProjects\\murslat.com\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.52.0\\res\\xml\\preferences.xml"
+    },
+    {
+        "merged": "C:\\proj\\demo\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "C:\\proj\\demo\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.52.0\\res\\xml\\preferences.xml"
     }
 ]
